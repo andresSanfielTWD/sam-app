@@ -1,0 +1,23 @@
+version = 0.1
+[default.pipeline_bootstrap.parameters]
+oidc_provider_url = "https://token.actions.githubusercontent.com"
+oidc_client_id = "sts.amazonaws.com"
+github_org = "andresSanfielTWD"
+github_repo = "sam-app"
+deployment_branch = "main2"
+oidc_provider = "github-actions"
+permissions_provider = "OpenID Connect (OIDC)"
+
+[dev.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::822672882384:role/aws-sam-cli-managed-dev-pipel-PipelineExecutionRole-AaqLOXBrmGkI"
+cloudformation_execution_role = "arn:aws:iam::822672882384:role/aws-sam-cli-managed-dev-p-CloudFormationExecutionRo-OKBr9LO1oWLC"
+artifacts_bucket = "aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-seljhbbqkzr4"
+image_repository = ""
+region = "eu-west-1"
+
+[prod.pipeline_bootstrap.parameters]
+pipeline_execution_role = "arn:aws:iam::822672882384:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-9kcJhVC41PGa"
+cloudformation_execution_role = "arn:aws:iam::822672882384:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-V4iVEAS61QoZ"
+artifacts_bucket = "aws-sam-cli-managed-prod-pipeline--artifactsbucket-57d3jxtfbtsi"
+image_repository = ""
+region = "eu-west-1"
